@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Base Converter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgb(169,138,213);
+        background: radial-gradient(circle, rgba(169,138,213,1) 40%, rgba(106,101,167,1) 100%);
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      input, select {
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px 5px black;
+      }
+      .result {
+        font-weight: bold;
+        margin-top: 20px;
+        font-size: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Number Base Converter</h1>
+    <form method="POST">
+      <label for="number">Number:</label>
+      <input type="text" id="number" name="number" required><br>
+      <label for="from_base">From Base:</label>
+      <input type="number" id="from_base" name="from_base" min="2" max="36" required><br>
+      <label for="to_base">To Base:</label>
+      <input type="number" id="to_base" name="to_base" min="2" max="36" required><br>
+      <input type="submit" value="Convert">
+    </form>
+    {% if result %}
+      <div class="result">
+        <p>{{ num_str }} in base {{ from_base }} is {{ result }} in base {{ to_base }}.</p>
+      </div>
+    {% endif %}
+  </body>
+</html>
